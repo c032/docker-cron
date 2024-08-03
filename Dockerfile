@@ -5,6 +5,6 @@ RUN apk add supercronic
 
 USER alpine
 WORKDIR /home/alpine
-COPY ./crontab ./crontab
+COPY --chown=alpine:alpine ./crontab ./crontab
 
 CMD ["/usr/bin/supercronic", "/home/alpine/crontab"]
